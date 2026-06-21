@@ -1,0 +1,22 @@
+tenancy_ocid = "CHANGEME"
+config_file_profile = "DEFAULT"
+availability_domain_name = "VluR:EU-FRANKFURT-1-AD-2"
+
+free_tier_instances = {
+  instance1 = {
+    display_name       = "instance1"
+    shape              = "VM.Standard.E2.1.Micro"
+    source_image_id    = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaack7qrrfuvvkgfwuvyhmklyvg42dq7blgbmf3fqma4xoa7ca6kdoq"
+    ssh_authorized_key = "CHANGEME"
+    tcp_ports          = [] # 22 port by default
+    udp_ports          = [8150]
+  }
+  # instance2 = {
+  #   display_name  = "instance2"
+  #   shape         = "VM.Standard.E2.1.Micro"
+  #   source_image_id = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaack7qrrfuvvkgfwuvyhmklyvg42dq7blgbmf3fqma4xoa7ca6kdoq"
+  #   ssh_authorized_key = "CHANGEME"
+  #   tcp_ports = [443]
+  #   udp_ports = []
+  # }
+}

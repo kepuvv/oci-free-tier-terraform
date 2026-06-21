@@ -1,0 +1,6 @@
+---
+- hosts: oci_vms
+  gather_facts: false
+  tasks:
+    - name: Ping {{ inventory_hostname }}
+      ansible.builtin.ping:

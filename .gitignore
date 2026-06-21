@@ -1,0 +1,9 @@
+.terraform/
+.terraform*
+ansible/inventory.ini
+export/
+terraform.tfvars
+backend.s3.tfbackend
+terraform.tfstate*
+terraform.tfstate.backup*
+.DS_Store
