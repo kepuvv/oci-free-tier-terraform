@@ -1,5 +1,6 @@
 # Terraform for Oracle Cloud Free Tier
-Terraform project to create the VMs allowed by the Oracle Cloud Free Tier + Ansible inventory file creation
+
+Terraform configuration for deploying Oracle Cloud Free Tier virtual machines, including automatic Ansible inventory generation.
 
 This repo will deploy:
 - default VCN with default subnet
