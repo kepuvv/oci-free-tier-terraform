@@ -136,13 +136,9 @@ Uncomment `backend "s3" {}` in `main.tf`
 To avoid error with ignoring `skip_s3_checksum = true` in `backend.s3.tfbackend` file like:
 
 >[!CAUTION]
-Error: Error copying state from the previous "local" backend to the newly configured
+Error:
 │ "s3" backend:
-│     failed to upload state: operation error S3: PutObject, https response error StatusCode: 501, RequestID: fra-1:cdUeUq_iwN1nJ2qNVUI5evBsDBwPkXhs_nrqBpMxPdL1PEnPBL0wvjyD_w__nmud, HostID: , api error NotImplemented: AWS chunked encoding not supported.
-│
-│ The state in the previous backend remains intact and unmodified. Please resolve
-│ the error above and try again.
-
+│     failed to upload state: operation error S3: PutObject, https response error StatusCode: 501, api error NotImplemented: AWS chunked encoding not supported.
 
 add AWS_REQUEST_CHECKSUM_CALCULATION and AWS_RESPONSE_CHECKSUM_VALIDATION environment variables:
 
