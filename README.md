@@ -1,4 +1,5 @@
-# Terraform for Oracle Cloud Free Tier
+# Terraform Oracle Cloud Infrastructure Free Tier
+## Deploy Always Free Instances
 
 Terraform configuration for deploying Oracle Cloud Free Tier virtual machines, including automatic Ansible inventory generation.
 
