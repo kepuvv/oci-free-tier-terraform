@@ -1,4 +1,9 @@
 # Terraform Oracle Cloud Infrastructure Free Tier
+
+![Terraform](https://img.shields.io/badge/Terraform-1.15+-623CE4?logo=terraform)
+![OCI Provider](https://img.shields.io/badge/OCI%20Provider-8.19-F80000)
+![Terraform validate](https://github.com/kepuvv/oci-free-tier-terraform/actions/workflows/terraform.yml/badge.svg)
+
 ## Deploy Always Free Instances
 
 Terraform configuration for deploying Oracle Cloud Free Tier virtual machines, including automatic Ansible inventory generation.

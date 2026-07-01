@@ -17,3 +17,4 @@ jobs:
       - run: |
           terraform init -backend=false
           terraform validate
+          terraform fmt -recursive -diff -check
