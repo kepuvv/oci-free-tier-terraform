@@ -9,9 +9,11 @@
 Terraform configuration for deploying Oracle Cloud Free Tier virtual machines, including automatic Ansible inventory generation.
 
 This repo will deploy:
-- default VCN with default subnet
-- default port 22 open
-- optional security groups for choosen ports
+- Default VCN with default subnet
+- Internet Gateway
+- Default Route Table
+- Default Security List with port 22
+- optional Network Security Group(s) for choosen port(s)
 - VMs for Oracle Free Tier like:
   - two **VM.Standard.E2.1.Micro** instances allowed by the Oracle free tier.
   - one **VM.Standard.A1.Flex** with 24GB RAM, 4 OCPUs allowed by the Oracle free tier.
