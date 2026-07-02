@@ -14,7 +14,21 @@ This repo will deploy:
 - optional security groups for choosen ports
 - VMs for Oracle Free Tier like:
   - two **VM.Standard.E2.1.Micro** instances allowed by the Oracle free tier.
-  - one **VM.Standard.A1.Flex** with 24GB RAM, 4 OCPUs allowed by the Oracle free tier. 
+  - one **VM.Standard.A1.Flex** with 24GB RAM, 4 OCPUs allowed by the Oracle free tier.
+
+```
+Terraform
+├── root module
+│   ├── main.tf
+│   ├── outputs.tf
+│   ├── variables.tf
+|   ├── terraform.tfvars
+│   └── oci-vm-module
+│       ├── network.tf
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+```
 
 >[!NOTE]
 **Actual information about Free resourses**  https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm
@@ -27,11 +41,11 @@ All you need is an empty account.
 
 ```sh
 # if you want the password protected key
-openssl genrsa -out ~/.ssh/not_ssh_oci_api_key.pem -aes128 2048                    
+openssl genrsa -out ~/.ssh/not_ssh_oci_api_key.pem -aes128 2048
 # if you want the non-password protected key
 #openssl genrsa -out ~/.ssh/not_ssh_oci_api_key.pem 2048
 chmod go-rwx ~/.ssh/not_ssh_oci_api_key.pem
-openssl rsa -pubout -in ~/.ssh/not_ssh_oci_api_key.pem -out ~/.ssh/not_ssh_oci_api_key_public.pem    
+openssl rsa -pubout -in ~/.ssh/not_ssh_oci_api_key.pem -out ~/.ssh/not_ssh_oci_api_key_public.pem
 ```
 
 Or follow here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm
