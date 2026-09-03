@@ -1,4 +1,4 @@
-# Terraform Oracle Cloud Infrastructure Free Tier
+# Terraform configuration Oracle Cloud Infrastructure Free Tier
 
 ![Terraform](https://img.shields.io/badge/Terraform-1.15+-623CE4?logo=terraform)
 ![OCI Provider](https://img.shields.io/badge/OCI%20Provider-8.19-F80000)
@@ -83,7 +83,7 @@ More info on how to gather these ids: https://docs.oracle.com/en-us/iaas/develop
 ## Step 3. Deploy
 
 ```sh
-terraform init
+terraform init -upgrade
 terraform plan
 terraform apply
 ```
