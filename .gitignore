@@ -2,8 +2,13 @@
 .terraform*
 ansible/inventory.ini
 export/
+mystate.tf
 terraform.tfvars
 backend.s3.tfbackend
 terraform.tfstate*
 terraform.tfstate.backup*
+backend.s3.tfbackend.bak
+errored.tfstate
+ansible/roles
+host_vars/
 .DS_Store
