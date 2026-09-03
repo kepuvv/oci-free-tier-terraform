@@ -2,7 +2,7 @@
 
 ![Terraform](https://img.shields.io/badge/Terraform-1.15+-623CE4?logo=terraform)
 ![OCI Provider](https://img.shields.io/badge/OCI%20Provider-8.19-F80000)
-![Terraform validate](https://github.com/kepuvv/oci-free-tier-terraform/actions/workflows/terraform-validate.yml/badge.svg)
+[![Terraform validate](https://github.com/kepuvv/oci-free-tier-terraform/actions/workflows/terraform-validate.yml/badge.svg)](https://github.com/kepuvv/oci-free-tier-terraform/actions/workflows/terraform-validate.yml)
 
 ## Deploy Always Free Instances
 
@@ -98,7 +98,7 @@ Set your values:
 
 ```sh
 export OCI_COMPARTMENT_OCID="ocid1.tenancy.oc1..CHANGEME"
-export TF_STATE_BUCKET="bucket-name-CHANGEME"
+export TF_STATE_BUCKET="terraform-state-CHANGEME"
 ```
 
 Get the Object Storage namespace:
@@ -138,11 +138,13 @@ oci iam customer-secret-key create --display-name display-name --user-id ocid1.u
 Copy the ID (**AWS_ACCESS_KEY_ID**) and the key (**AWS_SECRET_ACCESS_KEY**) to somewhere secure to be used later to set environment variables.
 
 Put it into `~/.aws/credentials`:
+
 ```ini
 [oracle]
 aws_access_key_id = <customer-secret-key-id>
 aws_secret_access_key = <customer-secret-key-secret>
 ```
+
 >[!INFO]
 https://docs.oracle.com/en/learn/ocios-s3-api-cpp/#task-2-determine-your-tenancy-namespace-and-s3-api-compartment
 
@@ -154,20 +156,21 @@ cp backend.s3.tfbackend.example backend.s3.tfbackend
 
 Uncomment `backend "s3" {}` in `main.tf`
  
->[!NOTE]
-To avoid error with ignoring `skip_s3_checksum = true` in `backend.s3.tfbackend` file like:
-
 >[!CAUTION]
-Error:
-│ "s3" backend:
-│     failed to upload state: operation error S3: PutObject, https response error StatusCode: 501, api error NotImplemented: AWS chunked encoding not supported.
+If you faced with ERROR like:  
+**Error**:  
+│ **"s3" backend**:  
+│ failed to upload state: operation error S3: PutObject, https response error StatusCode: 501, api error NotImplemented: AWS chunked encoding not supported.
 
-add AWS_REQUEST_CHECKSUM_CALCULATION and AWS_RESPONSE_CHECKSUM_VALIDATION environment variables:
+add `AWS_REQUEST_CHECKSUM_CALCULATION` and `AWS_RESPONSE_CHECKSUM_VALIDATION` environment variables:
 
 ```sh
 export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
 export AWS_RESPONSE_CHECKSUM_VALIDATION=when_required
 ```
+
+>[!NOTE]
+More information about ignoring `skip_s3_checksum = true` in `backend.s3.tfbackend` file: [issues/38337](https://github.com/hashicorp/terraform/issues/38337)
 
 Then initialize or migrate Terraform state:
 
